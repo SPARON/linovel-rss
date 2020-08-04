@@ -86,25 +86,25 @@ Resources:
   linovelib:
     Type: 'Aliyun::Serverless::Service'
     Properties:
-	  Description: 'helloworld'
-	# 函数名，可根据需要修改
+      Description: 'helloworld'
+    # 函数名，可根据需要修改
     linovelib:
       Type: 'Aliyun::Serverless::Function'
       Properties:
-		Handler: index.handler
-		# 运行时修改成custom
+        Handler: index.handler
+        # 运行时修改成custom
         Runtime: custom
-		CodeUri: './'
-		# 内存限制，可选修改
-		MemorySize: 128
-		# 超时，建议设置一个较大值，这里设成10秒
+        CodeUri: './'
+        # 内存限制，可选修改
+        MemorySize: 128
+        # 超时，建议设置一个较大值，这里设成10秒
         Timeout: 10
       Events:
         httpTrigger:
           Type: HTTP
           Properties:
-			AuthType: ANONYMOUS
-			# 允许的请求方法，可选
+            AuthType: ANONYMOUS
+            # 允许的请求方法，可选
             Methods: ['GET']
 ```
 
